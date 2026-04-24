@@ -1,4 +1,4 @@
-# portable_python_bundle `3.11.9`
+# Portable Python `3.11.9` Bundle for Windows
 ## Structure
 ```bash
 <bundle>
