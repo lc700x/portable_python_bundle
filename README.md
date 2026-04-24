@@ -1,4 +1,7 @@
 # Portable Python `3.11.9` Bundle for Windows
+## Overview
+This is a portable Python 3.11.9 bundle for Windows, designed to be easily distributed and used without installation and hardcoded absolute path dependencies.
+
 ## Structure
 ```bash
 <bundle>
@@ -15,7 +18,7 @@
 ```
 ## Usage
 
-To use the portable Python bundle on Windows:
+To use the portable Python bundle on Windows, download from latest [release](https://github.com/lc700x/portable-python-bundle/releases/latest) and extract to whatever location you prefer: i.e. `<bundle>`:
 
 1. Activate in a `cmd.exe` shell:
     ```bash
