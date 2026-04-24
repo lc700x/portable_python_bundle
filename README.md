@@ -18,29 +18,29 @@
 To use the portable Python bundle on Windows:
 
 1. Activate in a `cmd.exe` shell:
-```bash
-call <bundle>\activate.cmd
-```
+    ```bash
+    call <bundle>\activate.cmd
+    ```
 
 2. OR Activate in a `PowerShell` instance:
-```bash
-. <bundle>\activate.ps1
-```
+    ```bash
+    . <bundle>\activate.ps1
+    ```
 
 3. Use Python just as normal after the environment is activated
-4. For example: to install ``Jupyter Notebook:
+    For example: to install ``Jupyter Notebook:
 
-```bash
-pip install notebook
-```
+    ```bash
+    pip install notebook
+    ```
 
-This creates a `<bundle>\python3\Scripts\jupyter.exe` that is already in the PATH of our activated environment.
+    This creates a `<bundle>\python3\Scripts\jupyter.exe` that is already in the PATH of our activated environment.
 
-So, to start Jupyter Notebook, we could run this command directly from our `cmd` Shell or `PowerShell` instance:
+    So, to start Jupyter Notebook, run this command directly from our `cmd` Shell or `PowerShell` instance:
 
-```bash
-jupyter notebook
-```
+    ```bash
+    jupyter notebook
+    ```
 
 ## Reference
 [Portable Python Bundles on Windows](https://dev.to/treehouse/portable-python-bundles-on-windows-41ac)
