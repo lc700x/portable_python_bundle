@@ -57,6 +57,10 @@ To build the portable Python bundle, you can use the provided `build_bundle.ps1`
    .\build_bundle.ps1
    ```
 3. Follow the prompts to specify the desired Python version and other options.
+4. Optional: install tkinter
+   ```bash
+   pip install --target <bundle>\python3 tkinter-embed
+   ```
 
 ## Reference
 [Portable Python Bundles on Windows](https://dev.to/treehouse/portable-python-bundles-on-windows-41ac)
