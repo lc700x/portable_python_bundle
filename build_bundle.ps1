@@ -31,6 +31,7 @@ mkdir python3\Scripts -Force
 # Step 6: Enable pip
 Write-Host "Enabling pip..."
 python3\python.exe -m ensurepip
+python3\python.exe -m pip update pip
 
 # Step 7: Create pip wrapper script
 Write-Host "Creating pip wrapper..."
