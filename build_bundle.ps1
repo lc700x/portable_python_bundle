@@ -46,26 +46,12 @@ if __name__ == "__main__":
 
     from pip._internal.cli.main import main
     sys.exit(main())
-'@ | Out-File -FilePath pip_wrapper\scripts\pip.py -Encoding utf8
+'@ | Out-File -FilePath pip_wrapper\scripts\pip.py -Encoding ascii
 
-# Step 8: Create pip.exe using ScriptMaker
+# Step 8: Create pip.exe using ScriptMaker with python -c
 Write-Host "Generating pip.exe..."
 mkdir pip_wrapper\bin -Force
-
-# Write Python code to a temporary file
-$pyScript = @"
-from pip._vendor.distlib.scripts import ScriptMaker
-maker = ScriptMaker("pip_wrapper/scripts", "pip_wrapper/bin")
-maker.executable = r"python.exe"
-maker.make("pip.py")
-"@
-$pyScript | Out-File -FilePath make_pip_exe.py -Encoding utf8
-
-# Run the script with bundled Python
-python3\python.exe make_pip_exe.py
-
-# Clean up temporary file
-Remove-Item make_pip_exe.py
+python3\python.exe -c "from pip._vendor.distlib.scripts import ScriptMaker; maker = ScriptMaker('pip_wrapper/scripts','pip_wrapper/bin'); maker.executable = r'python.exe'; maker.make('pip.py')"
 
 # Step 9: Create activation scripts
 Write-Host "Creating activation scripts..."
@@ -77,7 +63,7 @@ Write-Host "Creating activation scripts..."
 
 `$env:PATH = "$(Get-Location)\python3;$(Get-Location)\python3\Scripts;$(Get-Location)\pip_wrapper\bin;" + `$env:PATH
 Write-Host "Activated Python bundle $pythonVersion"
-"@ | Out-File -FilePath activate.ps1 -Encoding utf8
+"@ | Out-File -FilePath activate.ps1 -Encoding ascii
 
 # CMD activation script
 @"
@@ -102,3 +88,5 @@ python3\python.exe -c "print('Hello, Python Bundle!')"
 
 Write-Host "Bundle setup complete! Created folder: $bundleName"
 Write-Host "Use 'activate.ps1' in PowerShell, 'activate.cmd' in cmd.exe, or 'run_bundle.bat' to activate and test."
+
+cd ..

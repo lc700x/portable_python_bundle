@@ -1,6 +1,6 @@
-# Portable Python `3.11.9` Bundle for Windows
+# Portable Python Bundle for Windows
 ## Overview
-This is a portable Python 3.11.9 bundle for Windows, designed to be easily distributed and used without installation and hardcoded absolute path dependencies.
+This is a portable bundle for Windows, designed to be easily distributed and used without installation and hardcoded absolute path dependencies.
 
 ## Structure
 ```bash
