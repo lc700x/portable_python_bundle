@@ -45,5 +45,18 @@ To use the portable Python bundle on Windows, download from latest [release](htt
     jupyter notebook
     ```
 
+## Build
+
+To build the portable Python bundle, you can use the provided `build_bundle.ps1` PowerShell script. This script automates the process of downloading and setting up the portable Python environment.
+
+### Steps to Build
+
+1. Open PowerShell and navigate to the directory containing the `build_bundle.ps1` script.
+2. Run the script:
+   ```bash
+   .\build_bundle.ps1
+   ```
+3. Follow the prompts to specify the desired Python version and other options.
+
 ## Reference
 [Portable Python Bundles on Windows](https://dev.to/treehouse/portable-python-bundles-on-windows-41ac)
