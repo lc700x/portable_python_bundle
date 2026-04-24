@@ -28,8 +28,7 @@ call <bundle>\activate.cmd
 ```
 
 3. Use Python just as normal after the environment is activated
-4. 
-For example: to install ``Jupyter Notebook:
+4. For example: to install ``Jupyter Notebook:
 
 ```bash
 pip install notebook
