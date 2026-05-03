@@ -20,5 +20,8 @@ rad.json
 *.flf
 #Test results file
 TestResults.xml
-
+pip_wrapper/bin
 bundle*
+python*bundle
+*.7z
+*.zip

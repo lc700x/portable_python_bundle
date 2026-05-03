@@ -8,7 +8,8 @@ if ([string]::IsNullOrWhiteSpace($pythonVersion)) {
 }
 
 # Step 1: Create bundle folder named with version
-$bundleName = "bundle$pythonVersion"
+$suffix = "_bundle"
+$bundleName = "python$pythonVersion$suffix"
 
 # Step 2: Create bundle folder
 mkdir $bundleName -Force
@@ -86,6 +87,21 @@ Write-Host "Creating run_bundle.bat..."
 call "%~dp0activate.cmd"
 python3\python.exe -c "print('Hello, Python Bundle!')"
 "@ | Out-File -FilePath run_bundle.bat -Encoding ascii
+
+# Step 11: Optionally install tkinter
+$installTkinter = Read-Host "Install tkinter-embed into the bundle? (Y/N, default Y)"
+if ([string]::IsNullOrWhiteSpace($installTkinter)) {
+    $installTkinter = "Y"
+}
+
+if ($installTkinter -match '^[Yy]') {
+    Write-Host "Installing tkinter-embed..."
+    .\activate.ps1
+    pip install --upgrade pip --no-cache-dir
+    pip install --target "python3\" tkinter-embed --no-cache-dir
+} else {
+    Write-Host "Skipping tkinter installation."
+}
 
 Write-Host "Bundle setup complete! Created folder: $bundleName"
 Write-Host "Use 'activate.ps1' in PowerShell, 'activate.cmd' in cmd.exe, or 'run_bundle.bat' to activate and test."
